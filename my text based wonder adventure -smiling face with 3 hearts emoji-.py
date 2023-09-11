@@ -34,15 +34,15 @@ def room_2():
     global atkdmg
     print("There's a sword stuck in a rock on the floor. Do you pull it out?")
     answer = input("y/n: ")
-    if answer == "y" or "yes":
+    if answer == "y" or answer == "yes":
         print("You pull out the sword! (+50 atk)")
         atkdmg += 50
         room_3()
-    elif answer == "n" or "no":
+    elif answer == "n" or answer == "no":
         print("You don't pull out the sword and keep going")
 
 def room_3():
-    global hp
+    global hp, atkdmg
     print("You continue walking until you see a huge rubber duck! Do you attack?")
     answer = input("y/n: ")
     if answer == "y":
@@ -51,8 +51,8 @@ def room_3():
         print("Do you hit the duck again?")
         answer = input("y/n: ")
         if answer == "y" or answer == "yes":
-            HP = 100
-            ATK += 60
+            hp = 100
+            atkdmg += 60
             print("You killed the duck! (+" + str(100-hp) + " HP, +60 ATK")
         elif answer == "n" or answer == "no":
             print("You died!")
