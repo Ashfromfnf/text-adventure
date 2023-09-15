@@ -1,9 +1,11 @@
 import time
+import random
 
 hp = 100
 atkdmg = 10
 firsttime = True
 swordtime = 0
+
 
 def start():
     global firsttime
