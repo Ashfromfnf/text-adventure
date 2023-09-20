@@ -1,19 +1,22 @@
 import time
 import random
 
+name = ""
 hp = 100
 atkdmg = 10
 firsttime = True
 swordtime = 0
+inventory = []
 
 
 def start():
-    global firsttime
+    global firsttime, name
     if firsttime == True:
+        name = input("What is your name? -> ")
         print("HP: " + str(hp))
         print("You enter a very dark dungeon, there are two doors, one on the left and one on the right.")
         firsttime = False
-    answer = input('Which one do you go through?: ')
+    answer = input('Which one do you go through?: ').lower
 
     if answer == "left" or answer == "l":
         print("you went left!!")
@@ -37,9 +40,9 @@ def room_1():
     exit()
 
 def room_2():
-    global atkdmg
+    global atkdmg, swordtime
     print("There's a sword stuck in a rock on the floor. Do you pull it out?")
-    answer = input("y/n: ")
+    answer = input("y/n: ").lower
     if answer == "y" or answer == "yes":
         print("You pull out the sword! (+50 atk)")
         atkdmg += 50
@@ -128,6 +131,7 @@ def room_4():
 
 
 
+print(inventory)
 start()
 
 
