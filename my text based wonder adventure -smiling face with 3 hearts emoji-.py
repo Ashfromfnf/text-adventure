@@ -79,6 +79,7 @@ def room_3():
         room_shroom()
     if answer == "n" or answer == "no":
         print("You walk past the mushroom, probably for the better. It might have been poisonous.")
+        room_4()
     else:
         print("Invalid input! :/")
         room_3()
@@ -86,8 +87,10 @@ def room_3():
 
 def room_shroom():
     # haha, room and shroom rhymes! :D
-    print("""You wake up to 6 shroom-people dragging you along the cold dungeon floor. \n They're no taller than 50cm and they have a comically large shroomcap that almost looks like a hat \n They're chanting "Today's feast will be unmatched, we got a big, tall human, with a lot of flesh" \n They're singing and dancing, while dragging you to their camp. \n Once you arrive at their camp, their leader is sitting on his throne, with an even larger shroomcap than the others. \n He commands the other shrooms to hang you over the flame. \n You try to convince the shroomfolk that you don't taste as good as you look, they're kinda skeptical, so they carve out a decent-sized chunk of your thigh, while you're screaming and crying for help. \n """)
+    print("""You wake up to 6 shroom-people dragging you along the cold dungeon floor. \n They're no taller than 50cm and they have a comically large shroomcap that almost looks like a hat \n They're chanting "Today's feast will be unmatched, we got a big, tall human, with a lot of flesh" \n They're singing and dancing, while dragging you to their camp. \n Once you arrive at their camp, their leader is sitting on his throne, with an even larger shroomcap than the others. \n He commands the other shrooms to hang you over the flame. \n You try to convince the shroomfolk that you don't taste as good as you look, they're kinda skeptical, so they carve out a decent-sized chunk of your thigh, while you're screaming and crying for help. \n One of the shroomfolk take a bite out of the chunk of thigh they cut out. \n "Oh wow, he tastes like shit" \n Another funguy takes a bite and says: "Oh yeah, you're right, here king, take a bite" \n The king takes a bite and lets you go free!""")
 
+    print("You're still mad after they cut a big chunk out of your thigh, so when they untie you, you grab the sword you got from the stone earlier and go rampage and kill every funguy in your sight!")
+    print("You've killed all the shrooms except for one... the king. You're standing face-to-face with him, he looks you deep in your eyes and cracks his knuckles,")
 
 def duck_attack():
     global firsttime, hp, atkdmg, maxhp, duckhp
