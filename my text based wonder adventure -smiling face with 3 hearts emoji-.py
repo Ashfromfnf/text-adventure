@@ -244,3 +244,4 @@ print(atkdmg, "ATK")
 print("inv:", inventory)
 
 
+# I would have done more with like keys and stuff, but I didn't really find anywhere where it would be suitable, sorry! :c
