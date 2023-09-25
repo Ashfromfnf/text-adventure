@@ -58,6 +58,8 @@ def room_2():
         room_2()
 
 def room_3():
+    global maxhp, hp, atkdmg, dontbreak
+    dontbreak = False
     print("You've been walking for a while, without seeing anything of interest. \n Then you stumble upon a room with nothing but a mushroom in the middle of the room. \n You ponder if you should eat the mushroom or keep going \n The mushroom might be dangerous, but it might also aid you in battle")
     answer = input("Do you eat the mushroom? y/n: ").lower()
     if answer == "y" or answer == "yes":
@@ -80,8 +82,9 @@ def room_3():
         room_shroom()
     if answer == "n" or answer == "no":
         print("You walk past the mushroom, probably for the better. It might have been poisonous.")
+        dontbreak = True
         room_4()
-    else:
+    elif answer != "y" and answer != "yes" and answer != "n" and answer != "no" and dontbreak == False:
         print("Invalid input! :/")
         room_3()
 
@@ -107,7 +110,7 @@ def duck_attack():
             hp -= 40
             print("You hit the duck! (Duck's HP: " + str(duckhp+atkdmg), "-", str(atkdmg) + ")")
             print("The duck hits you! (HP: " + str(hp+40) + "-" + "40" + "=" + str(hp))
-            firsttime = False"
+            firsttime = False
         elif answer == "n" or answer == "no":
             print("The duck killed you! Oh noes")
             time.sleep(10)
@@ -118,13 +121,14 @@ def duck_attack():
         hp = maxhp
         atkdmg += 60
         print("You killed the duck and ate it's meat! (+20 max HP, You healed fully, +60 ATK")
+        room_5()
         
     if hp <= 0:
         print("The duck killed you! :c")
         time.sleep(10)
         
 
-    else:
+    elif duckhp >= 0:
         print("Do you hit the duck again?")
         answer = input("y/n: ").lower()
         if answer == "yes" or "y":
@@ -172,7 +176,7 @@ def shroom_victory():
     room_4()
 
 def shroom_fight():
-    global inventoryz, hp, maxhp
+    global inventory, hp, maxhp
     print("""You've killed all the shrooms except for one... the king. You're standing face-to-face with him, he looks you deep in your eyes and cracks his knuckles; "This will be an easy fight" """)
     time.sleep(0.5)
     print("""You pull out your trusty sword and stare him into the eyes and say "Your head will be mine" """)
@@ -214,7 +218,7 @@ def shroom_fight():
 def room_5():
     global inventory
     print("You're still exhaused by the fight with the duck, but you keep going \n You see three doors, which one do you go through?")
-    answer = input("1/2/3:  ").lower
+    answer = str(input("1/2/3:  ").lower)
     if answer == "!":
         print("You see Magne, your programming teacher, he gives you a generous 6/6 on your programming task. \n You say thanks, and he vanishes, just as suddenly as he appeared")
         inventory.append("Certificate of Getting The Best Grade")
@@ -238,8 +242,8 @@ print("inv:", inventory)
 start()
 firsttime = True
 print("This is the end. Here's some stats:")
-print(hp + "/" + maxhp, "HP")
-print(atkdmg, "ATK")
+print(str(hp) + "/" + str(maxhp), "HP")
+print(str(atkdmg), "ATK")
 
 print("inv:", inventory)
 
